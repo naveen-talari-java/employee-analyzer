@@ -1,0 +1,33 @@
+1. Core Classes
+
+    Employee: Represents an employee record (id, firstName, lastName, salary, managerId).
+    EmployeeService: Contains the core logic for processing employee data, calculating salary discrepancies, and identifying long reporting lines.
+    CsvReaderService: Handles reading data from the CSV file and converting it into a list of Employee objects.
+    ReportService: Formats and prints the output reports to the console.
+	CsvGeneratorService: Generates the csv file witht the provided name and no of records (application.property)
+    EmployeeAnalyzerApp (Main Class): The entry point of the Spring Boot application, orchestrating the data creation, loading and report generation.
+
+2. Functionality
+
+	CSV Data Generation: The application generates the csv file if we want, by providing the properties in the application.properties file.
+    CSV Data Loading: The application will read the CSV file, parse each line into an Employee object, and store them in a collection (e.g., a List).
+    Salary Analysis:
+        For each manager, calculate the average salary of their direct subordinates.
+        Determine the minimum (20% above) and maximum (50% above) acceptable salary range for the manager.
+        Compare the manager's salary to this range and report any discrepancies.
+    Reporting Line Analysis:
+        Identify the CEO (the employee with no manager).
+        For each employee, trace their reporting line back to the CEO, counting the number of managers in the chain.
+        Report employees with more than 4 managers in their reporting line.
+    Reporting: The application will print the results to the console, clearly indicating:
+        Managers earning less than they should (and the difference).
+        Managers earning more than they should (and the difference).
+        Employees with too long reporting lines.
+    Unit Testing: JUnit tests will be provided to verify the correctness of the core logic (salary calculations, reporting line analysis).
+    CSV File: I'll generate a sample CSV file with 1000 records.
+
+3. Assumptions
+
+    Valid Input: I'll assume the input CSV file is generally well-formatted according to the specified structure. Error handling will be included to manage potential issues like missing fields or invalid data, but I won't handle maliciously crafted CSVs.
+    Manager Existence: I'll assume that every managerId references a valid Employee within the data set.
+    Single CEO: I'll assume there is only one CEO (an employee with no manager).
