@@ -1,3 +1,5 @@
+technical_doc file provides the important classes and explanation. I suggest to go through the file to get the better understanding of the application
+
 application.properties:
 -----------------------
 #this property used to enable/disable the csv file generation
