@@ -46,10 +46,6 @@ class EmployeeAnalyzerAppTest {
         ReflectionTestUtils.setField(employeeAnalyzerApp, "records", 100);
     }
 
-    /*@Test
-    void contextLoads() {
-    }*/
-
     @Test
     void run_SuccessfulExecution_CallsServicesAndPrintsOutput() {
         // Arrange

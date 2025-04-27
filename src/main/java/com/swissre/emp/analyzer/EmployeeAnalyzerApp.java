@@ -37,6 +37,9 @@ public class EmployeeAnalyzerApp implements CommandLineRunner {
 	@Value("${spring.csv.generation.enabled}")
 	private boolean csvGenerationEnabled;
 
+	public static final String CSV_DEFAULT_FILE_PATH = "employees.csv";
+	public static final Integer CSV_DEFAULT_RECORDS = 100;
+
 	public static void main(String[] args) {
 		SpringApplication.run(EmployeeAnalyzerApp.class, args);
 	}
@@ -46,17 +49,17 @@ public class EmployeeAnalyzerApp implements CommandLineRunner {
 
 		//setting the default value
 		if(StringUtils.isEmpty(filePath)) {
-			filePath = "employees.csv";
+			filePath = CSV_DEFAULT_FILE_PATH;
 		}
 		//setting the default value
 		if(Objects.isNull(records)) {
-			records=25;
+			records=CSV_DEFAULT_RECORDS;
 		}
 
-		//Generating the csv file
         try {
 			long startTime = System.currentTimeMillis();
 
+			//Generating the csv file
             if (csvGenerationEnabled) {
                 csvGeneratorService.generate(filePath, records);
                 System.out.println(records+" records generated in " + filePath);
