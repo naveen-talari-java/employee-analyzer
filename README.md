@@ -1,3 +1,4 @@
+Java Version : 21
 technical_doc file provides the important classes and explanation. I suggest to go through the file to get the better understanding of the application
 
 application.properties:
