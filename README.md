@@ -3,9 +3,10 @@ application.properties:
 #this property used to enable/disable the csv file generation
 #if sets to true, program will take care of creating the csv file
 spring.csv.generation.enabled=true
+
 #need to set below properties as well if enabled above property
-spring.emp.csv.file.path=employees.csv
-spring.no.of.emp.records=1000
+spring.emp.csv.file.path=employees.csv (you can provide any name)
+spring.no.of.emp.records=1000 (you can provide any no of records)
 
 #if sets to false (which means you want to use your own csv file)
 spring.csv.generation.enabled=false
