@@ -2,18 +2,15 @@ technical_doc file provides the important classes and explanation. I suggest to 
 
 application.properties:
 -----------------------
-#this property used to enable/disable the csv file generation
-#if sets to true, program will take care of creating the csv file
+-> If you want to ask application to generate the csv file please set the below 
+properties in application.properties file
 spring.csv.generation.enabled=true
-
-#need to set below properties as well if enabled above property
 spring.emp.csv.file.path=employees.csv (you can provide any name)
 spring.no.of.emp.records=1000 (you can provide any no of records)
 
-#if sets to false (which means you want to use your own csv file)
+-> If you want to use your own csv file please set the below 
+properties in application.properties file (you can move your csv file into the project directory)
 spring.csv.generation.enabled=false
-
-#If csv generation is disabled, you can put the your own csv file in the project directory and set the below property with the file name
 spring.emp.csv.file.path=your_file_name.csv
 
 #After setting the properties, follow the below steps to run the app.
